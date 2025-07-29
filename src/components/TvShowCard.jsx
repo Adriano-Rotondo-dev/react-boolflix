@@ -13,8 +13,8 @@ export default function ShowCard({ data }) {
         <h6 className="card-title">Tv Show</h6>
       </div>
       <div className="card-body">
-        <p className="card-text flag-icon">
-          <span className="fw-bold"> Lingua originale </span>
+        <p className="card-text fw-bold"> Lingua originale </p>
+        <p className="flag-icon">
           <LanguageFlags language={data.original_language} />
         </p>
         <p className="card-text">
