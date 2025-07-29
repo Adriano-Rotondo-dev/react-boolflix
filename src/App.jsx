@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     if (!search.trim()) return;
     axios
       .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}&language=it-IT`
       )
       .then((res) => {
         setMovies(res.data.results);
@@ -22,10 +22,10 @@ function App() {
   return (
     <>
       <header>
-        <nav className="navbar navbar-expand-sm navbar-light bg-light">
+        <nav className="navbar navbar-expand-sm navbar-light bg-black">
           <div className="container">
             <a className="navbar-brand" href="#">
-              Navbar
+              <img className="logo" src="img/boolflix.png" />
             </a>
             <div className="collapse navbar-collapse" id="collapsibleNavId">
               <form
@@ -40,7 +40,7 @@ function App() {
                   onChange={(e) => setSearch(e.target.value)}
                 />
                 <button
-                  className="btn btn-outline-success my-2 my-sm-0"
+                  className="btn btn-outline-danger my-2 my-sm-0"
                   type="submit"
                 >
                   Search
@@ -51,25 +51,23 @@ function App() {
         </nav>
       </header>
       <main>
-        <div className="row m-5 d-flex justify-content-center">
+        <div className="row p-5 d-flex justify-content-center bg-dark">
           {movies.map((movie) => (
             <div className="col col-3" key={movie.id}>
-              <div className="card">
-                <img
-                  className="card-img-top"
-                  src={movie.poster_path}
-                  alt={movie.original_title}
-                />
-                <div className="card-body">
+              <div className="card p-3 m-3 ">
+                <div className="card-head">
                   <h5 className="card-title">{movie.title}</h5>
-                  <p className="card-text">{movie.overview}</p>
+                  <h6 className="card-title">{movie.original_title}</h6>
+                </div>
+                <div className="card-body">
+                  <p className="card-text">{movie.original_language}</p>
+                  <p className="card-text">{movie.vote_average}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </main>
-      <footer></footer>
     </>
   );
 }
