@@ -10,7 +10,7 @@ export default function ShowCard({ data }) {
         />
         <h4 className="card-title">{data.name}</h4>
         <h5 className="card-title">{data.original_name}</h5>
-        <h7 className="card-title">Tv Show</h7>
+        <h6 className="card-title">Tv Show</h6>
       </div>
       <div className="card-body">
         <p className="card-text flag-icon">
