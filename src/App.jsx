@@ -4,6 +4,7 @@ import LanguageFlags from "./components/LanguageFlags";
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [tv, setTv] = useState([]);
   const [search, setSearch] = useState("");
   const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -17,6 +18,15 @@ function App() {
       .then((res) => {
         setMovies(res.data.results);
         console.log(res.data);
+      })
+      .catch((err) => console.error(err));
+    axios
+      .get(
+        `https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${search}&language=it-IT`
+      )
+      .then((res) => {
+        setTv(res.data.results);
+        console.log(res.data.results);
       })
       .catch((err) => console.error(err));
   };
@@ -59,6 +69,7 @@ function App() {
                 <div className="card-head">
                   <h5 className="card-title">{movie.title}</h5>
                   <h6 className="card-title">{movie.original_title}</h6>
+                  <h7 className="card-title">Movie</h7>
                 </div>
                 <div className="card-body">
                   <p className="card-text">
@@ -67,7 +78,28 @@ function App() {
                   </p>
                   <p className="card-text">
                     <span className="fw-bold"> Voto </span>
-                    {movie.vote_average}
+                    {movie.vote_average.toFixed(2)}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+          {tv.map((show) => (
+            <div className="col col-3" key={show.id}>
+              <div className="card p-3 m-3 ">
+                <div className="card-head">
+                  <h5 className="card-title">{show.name}</h5>
+                  <h6 className="card-title">{show.original_name}</h6>
+                  <h7 className="card-title">Tv Show</h7>
+                </div>
+                <div className="card-body">
+                  <p className="card-text">
+                    <span className="fw-bold"> Lingua originale </span>
+                    <LanguageFlags language={show.original_language} />
+                  </p>
+                  <p className="card-text">
+                    <span className="fw-bold"> Voto </span>
+                    {show.vote_average.toFixed(2)}
                   </p>
                 </div>
               </div>
