@@ -67,9 +67,13 @@ function App() {
             <div className="col col-3" key={movie.id}>
               <div className="card p-3 m-3 ">
                 <div className="card-head">
-                  <h5 className="card-title">{movie.title}</h5>
-                  <h6 className="card-title">{movie.original_title}</h6>
-                  <h7 className="card-title">Movie</h7>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                  <h4 className="card-title">{movie.title}</h4>
+                  <h5 className="card-title">{movie.original_title}</h5>
+                  <h6 className="card-title">Movie</h6>
                 </div>
                 <div className="card-body">
                   <p className="card-text">
@@ -88,6 +92,10 @@ function App() {
             <div className="col col-3" key={show.id}>
               <div className="card p-3 m-3 ">
                 <div className="card-head">
+                  <img
+                    src={`https://image.tmdb.org/t/p/w200/${show.poster_path}`}
+                    alt={show.name}
+                  />
                   <h5 className="card-title">{show.name}</h5>
                   <h6 className="card-title">{show.original_name}</h6>
                   <h7 className="card-title">Tv Show</h7>
