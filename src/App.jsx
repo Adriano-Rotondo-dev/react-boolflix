@@ -60,8 +60,14 @@ function App() {
                   <h6 className="card-title">{movie.original_title}</h6>
                 </div>
                 <div className="card-body">
-                  <p className="card-text">{movie.original_language}</p>
-                  <p className="card-text">{movie.vote_average}</p>
+                  <p className="card-text">
+                    <span className="fw-bold">Lingua originale -</span>
+                    {movie.original_language}
+                  </p>
+                  <p className="card-text">
+                    <span className="fw-bold">Voto -</span>
+                    {movie.vote_average}
+                  </p>
                 </div>
               </div>
             </div>
