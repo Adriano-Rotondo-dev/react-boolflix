@@ -19,7 +19,7 @@ export default function FilmCard({ data }) {
         </p>
         <p className="card-text">
           <span className="fw-bold"> Voto </span>
-          {data.vote_average.toFixed(2)}
+          {Math.ceil(data.vote_average) / 2}
         </p>
       </div>
     </div>
