@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import LanguageFlags from "./components/LanguageFlags";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -61,11 +62,11 @@ function App() {
                 </div>
                 <div className="card-body">
                   <p className="card-text">
-                    <span className="fw-bold">Lingua originale -</span>
-                    {movie.original_language}
+                    <span className="fw-bold"> Lingua originale </span>
+                    <LanguageFlags language={movie.original_language} />
                   </p>
                   <p className="card-text">
-                    <span className="fw-bold">Voto -</span>
+                    <span className="fw-bold"> Voto </span>
                     {movie.vote_average}
                   </p>
                 </div>
