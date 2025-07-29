@@ -8,12 +8,12 @@ export default function ShowCard({ data }) {
           src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
           alt={data.name}
         />
-        <h5 className="card-title">{data.name}</h5>
-        <h6 className="card-title">{data.original_name}</h6>
+        <h4 className="card-title">{data.name}</h4>
+        <h5 className="card-title">{data.original_name}</h5>
         <h7 className="card-title">Tv Show</h7>
       </div>
       <div className="card-body">
-        <p className="card-text">
+        <p className="card-text flag-icon">
           <span className="fw-bold"> Lingua originale </span>
           <LanguageFlags language={data.original_language} />
         </p>
