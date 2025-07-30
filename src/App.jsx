@@ -4,7 +4,7 @@ import axios from "axios";
 import Navbar from "./components/Navbar";
 import BoolflixList from "./components/BoolflixList";
 import TvShowCard from "./components/TvShowCard";
-import FilmCard from "./components/FilmCard";
+import MovieCard from "./components/MovieCard";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -44,7 +44,7 @@ function App() {
         />
       </header>
       <main>
-        <BoolflixList items={movies} Card={FilmCard} />
+        <BoolflixList items={movies} Card={MovieCard} />
         <BoolflixList items={tv} Card={TvShowCard} />
       </main>
     </>
