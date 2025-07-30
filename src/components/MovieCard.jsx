@@ -20,10 +20,8 @@ export default function FilmCard({ data }) {
           <p className="flag-icon">
             <LanguageFlags language={data.original_language} />
           </p>
-          <p className="card-text">
-            <span className="fw-bold">Overview</span>
-            <span className="fs-6">{data.overview}</span>
-          </p>
+          <p className="card-text fw-bold"> Overview </p>
+          <p className="fs-6">{data.overview}</p>
         </div>
       </div>
     </div>
