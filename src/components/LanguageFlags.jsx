@@ -16,7 +16,9 @@ const languagesCodes = {
 export default function LanguageFlags({ language }) {
   const languageCode = languagesCodes[language];
   const Flags = FlagIcons[languageCode];
-
+  if (!Flags) {
+    return <span className="fs-6">No Flag </span>;
+  }
   return (
     <>
       <Flags title={language} />

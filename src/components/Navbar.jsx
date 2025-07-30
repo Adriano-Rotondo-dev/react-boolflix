@@ -2,7 +2,7 @@ export default function Navbar({ search, handleSearch, setSearch }) {
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-black">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <img className="logo" src="img/boolflix.png" />
         </a>
         <div className="collapse navbar-collapse" id="collapsibleNavId">

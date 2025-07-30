@@ -1,4 +1,5 @@
 import LanguageFlags from "./LanguageFlags";
+import StarRating from "./StarRating";
 
 export default function ShowCard({ data }) {
   return (
@@ -19,7 +20,7 @@ export default function ShowCard({ data }) {
         </p>
         <p className="card-text">
           <span className="fw-bold"> Voto </span>
-          {Math.ceil(data.vote_average) / 2}
+          <StarRating vote={data.vote_average} />
         </p>
       </div>
     </div>
