@@ -23,7 +23,7 @@ export default function ShowCard({ data }) {
           </p>
           <p className="card-text">
             <span className="fw-bold">Overview</span>
-            <div className="fs-6">{data.overview}</div>
+            <span className="fs-6">{data.overview}</span>
           </p>
         </div>
       </div>
