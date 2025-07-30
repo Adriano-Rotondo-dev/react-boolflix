@@ -4,3 +4,32 @@
   max-width: 3rem;
   max-height: 5rem;
 }
+.card {
+  min-height: 505px;
+  max-height: 505px;
+}
+.card-hover {
+  border-radius: 0.33rem;
+  position: absolute;
+  color: white;
+  min-height: 505px;
+  min-width: 342px;
+  left: -0.5rem;
+  top: -0.3rem;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.2s;
+}
+.card:hover .card-hover {
+  display: block;
+  opacity: 1;
+}
+.card-hover-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 16;
+  line-clamp: 16;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 340px;
+  white-space: normal;
+}

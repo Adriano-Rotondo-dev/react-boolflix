@@ -8,17 +8,23 @@ export default function FilmCard({ data }) {
         src={`https://image.tmdb.org/t/p/w342/${data.poster_path}`}
         alt={data.title}
       />
-      <div className="card-hover">
-        <h4 className="card-title">{data.title}</h4>
-        <h5 className="card-title">{data.original_title}</h5>
-        <p className="card-text">
-          <span className="fw-bold"> Voto </span>
-          <StarRating vote={data.vote_average} />
-        </p>
-        <p className="card-text fw-bold"> Lingua originale </p>
-        <p className="flag-icon">
-          <LanguageFlags language={data.original_language} />
-        </p>
+      <div className="card-hover bg-black p-3">
+        <div className="card-hover-text">
+          <h5 className="card-title">{data.title}</h5>
+          <h6 className="card-title">{data.original_title}</h6>
+          <p className="card-text">
+            <span className="fw-bold"> Voto </span>
+            <StarRating vote={data.vote_average} />
+          </p>
+          <p className="card-text fw-bold"> Lingua originale </p>
+          <p className="flag-icon">
+            <LanguageFlags language={data.original_language} />
+          </p>
+          <p className="card-text">
+            <span className="fw-bold">Overview</span>
+            <div className="fs-6">{data.overview}</div>
+          </p>
+        </div>
       </div>
     </div>
   );
