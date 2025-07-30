@@ -3,8 +3,8 @@ import axios from "axios";
 
 import Navbar from "./components/Navbar";
 import BoolflixList from "./components/BoolflixList";
-import TvShowCard from "./components/TvShowCard";
-import MovieCard from "./components/MovieCard";
+import TvShowCard from "./components/cards/TvShowCard";
+import MovieCard from "./components/cards/MovieCard";
 
 function App() {
   const [movies, setMovies] = useState([]);

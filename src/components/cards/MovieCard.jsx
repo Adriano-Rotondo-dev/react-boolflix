@@ -1,5 +1,5 @@
-import LanguageFlags from "./LanguageFlags";
-import StarRating from "./StarRating";
+import LanguageFlags from "../LanguageFlags";
+import StarRating from "../StarRating";
 
 export default function FilmCard({ data }) {
   return (
