@@ -3,7 +3,7 @@ import StarRating from "./StarRating";
 
 export default function FilmCard({ data }) {
   return (
-    <div className="card mb-3 border-light border-5">
+    <div className="card m-3 border-light border-5">
       <img
         src={`https://image.tmdb.org/t/p/w342/${data.poster_path}`}
         alt={data.title}
